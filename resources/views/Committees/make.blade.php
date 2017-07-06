@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="/css/app.css" rel="stylesheet">
 @section('content')
     <h2>Create comittee </h2>
     <section class="container">
@@ -40,4 +40,6 @@
             @endif
         </div>
     </section>
+    <script src="/js/app.js"></script>
+    <script> $(document).foundation();</script>
 @endsection

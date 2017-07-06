@@ -1,5 +1,4 @@
 @extends('layouts.app')
-<!-- Latest compiled and minified CSS -->
 @section('content')
     <div class="container">
         <div class="row main">
@@ -102,4 +101,6 @@
         @endif
         </div>
         </section>
+        <script> $(document).foundation();</script>
+        <script src="/js/app.js"></script>
 @endsection

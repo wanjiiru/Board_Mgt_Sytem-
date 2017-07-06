@@ -1,6 +1,5 @@
 
 @extends('layouts.app')
-
 @section('content')
 
         @if (Route::has('login'))
@@ -61,4 +60,9 @@
                 </div>
             </div>
     </div>
+            <div id ="app"><p>asdfghjkldfghjkldfxfjk</p>lllllllllll
+                <example></example>
+            </div>
+            <script src="/js/app.js"></script>
+            <script> $(document).foundation();</script>
    @endsection

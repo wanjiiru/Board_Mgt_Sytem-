@@ -19,5 +19,9 @@
     "lodash": "^4.17.4",
     "vue": "^2.1.10",
     "webpack-devserver": "0.0.6"
+  },
+  "dependencies": {
+    "foundation-sites": "^6.4.1",
+    "jquery": "^3.2.1"
   }
 }
