@@ -14,7 +14,9 @@ class CommitteesController extends Controller
      */
     public function index()
     {
-        //
+        $committees = Committee::all();
+        return view ('committees.index',['committees'=>$committees]);
+
     }
 
     /**
@@ -35,7 +37,11 @@ class CommitteesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate ($request(),['name'=>'required', 'chairperson'=>'required']);
+        $input = request()->all ();
+        Committee::create($input);
+        return redirect (',committees');
+
     }
 
     /**
@@ -44,9 +50,10 @@ class CommitteesController extends Controller
      * @param  \App\committees  $committees
      * @return \Illuminate\Http\Response
      */
-    public function show(committees $committees)
+    public function show( $id)
     {
-        //
+        $committee = Committee::findOrFail($id);
+        return view ('committee.show', compact ('committee'));
     }
 
     /**

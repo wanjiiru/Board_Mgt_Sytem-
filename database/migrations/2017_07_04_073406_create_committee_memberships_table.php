@@ -15,6 +15,7 @@ class CreateCommitteeMembershipsTable extends Migration
     {
         Schema::create('committee_memberships', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer ('committee_id');
             $table->timestamps();
         });
     }

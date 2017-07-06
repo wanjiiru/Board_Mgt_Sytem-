@@ -1,72 +1,43 @@
 @extends('layouts.app')
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 @section('content')
-        <div id="user-committee-list">
-            <div class="col-sm -12">
-                <section class="box">
-                    <header class="panel_header">
-                        <div class="col--6 col-md-12 col-sm-12  col-xs-12 mainlistdata-right no-padding option-btn">
-                            <div class="mainlistdata-right-inner">
-                                <a href="#add-committee-modal" data-target="#add-committee-modal" data-toggle="modal" class="btn btn-primary"><i class="fa fa-plus"></i>&nbsp;Add Committee</a>
-                            </div>
-                        </div>
-                        <h2 class="title pull-left">Committees List</h2>
-                    </header>
-                    <div class="content-body">
-                        <div class="row">
-                            <div class="col-sm-12">
-
-                                <div class='row'>
-                                    <div class="table-responsive">
-                                        <table id="grouplist" class="table display" cellspacing="0" width="100%">
-                                            <thead>
-                                            <tr>
-                                                <th class="sorting_desc">Committee Name</th>
-                                                <th>Total Members</th>
-                                                <th>Chair</th>
-                                                <th>Chair Start</th>
-                                                <th>Chair End</th>
-                                                <th>Actions</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td>
-                                                    <strong>
-                                                        Full Board
-                                                    </strong>
-                                                    <br />
-                                                </td>
-                                                <td>1</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                    <a href="" class="btn btn-primary user-edit-committee" data-c="131626"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;Edit</a>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+    <h2>Create comittee </h2>
+    <section class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                {!! Form::open(['url' => '/committees']) !!}
+                <div class="form-group">
+                    {!! Form::label('name') !!}
+                    {!! Form::text('name', null, ['class' => 'form-control']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('chaiperson') !!}
+                    {!! Form::text('chairperson', null, ['class' => 'form-control']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('summary') !!}
+                    {!! Form::textarea('summary', null, ['class' => 'form-control']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::select('members') !!}
+                    {!! Form::text('add members', null, ['class' => 'form-control']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::submit('Create committee', ['class' => 'btn btn-primary']) !!}
+                </div>
+                {!! Form::close() !!}
             </div>
-
-
+            @if (count($errors))
+                <div class="form-group">
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{$error}}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            @endif
         </div>
-
     </section>
-
-
-    </div>
-
-    </section>
-
-
-
-
-
 @endsection

@@ -16,7 +16,7 @@ class BoardController extends Controller
      */
     public function index()
     {
-        return view ('index.php');
+        return view ('boards.index');
         //
     }
 
@@ -38,7 +38,6 @@ class BoardController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**

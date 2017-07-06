@@ -8,6 +8,6 @@ class Board extends Model
 {
     protected $table = 'boards';
     protected $fillable =
-        ['First Name', 'last Name', ' Email', ];
+        ['name', 'chairperson', ' summary','members' ];
 
 }
