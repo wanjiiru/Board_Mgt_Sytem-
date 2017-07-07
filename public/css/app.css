@@ -8414,3 +8414,8 @@ main.login > .login-box {
   background: #fff;
 }
 
+.center-block {
+  margin-right: auto;
+  margin-left: auto;
+}
+
