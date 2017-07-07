@@ -1,34 +1,34 @@
 @extends('layouts.app')
-<link href="/css/app.css" rel="stylesheet">
 @section('content')
     <h2>Create comittee </h2>
-    <section class="container">
+    <section class="main-section">
+        <div class="section-wrapper">
+        <div class="box">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
                 {!! Form::open(['url' => '/committees']) !!}
-                <div class="form-group">
+                <div class="row">
                     {!! Form::label('name') !!}
-                    {!! Form::text('name', null, ['class' => 'form-control']) !!}
+                    {!! Form::text('name', null) !!}
                 </div>
-                <div class="form-group">
+                <div class="row">
                     {!! Form::label('chaiperson') !!}
-                    {!! Form::text('chairperson', null, ['class' => 'form-control']) !!}
+                    {!! Form::text('chairperson', null) !!}
                 </div>
-                <div class="form-group">
+                <div class="row">
                     {!! Form::label('summary') !!}
-                    {!! Form::textarea('summary', null, ['class' => 'form-control']) !!}
+                    {!! Form::textarea('summary', null) !!}
                 </div>
-                <div class="form-group">
+                <div class="row">
                     {!! Form::select('members') !!}
-                    {!! Form::text('add members', null, ['class' => 'form-control']) !!}
+                    {!! Form::text('add members', null) !!}
                 </div>
-                <div class="form-group">
-                    {!! Form::submit('Create committee', ['class' => 'btn btn-primary']) !!}
+                <div class="row">
+                    {!! Form::submit('Create committee') !!}
                 </div>
                 {!! Form::close() !!}
-            </div>
+        </div>
             @if (count($errors))
-                <div class="form-group">
+                <div class="row">
                     <div class="alert alert-danger">
                         <ul>
                             @foreach($errors->all() as $error)
@@ -36,7 +36,7 @@
                             @endforeach
                         </ul>
                     </div>
-                </div>
+                </div></div></div>
             @endif
         </div>
     </section>

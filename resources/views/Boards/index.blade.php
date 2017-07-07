@@ -5,7 +5,7 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h2><span>Committees</span> <a class="btn btn-primary pull-right" href="/committees/makee">Create
+                        <h2><span>Committees</span><a class="btn btn-primary pull-right" href="/committees/makee">Create
                                 comiitee</a></h2>
                     </div>
                 </div>
