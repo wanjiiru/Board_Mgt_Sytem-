@@ -43,7 +43,7 @@
                     </div>
                 </div>
               </div>
-            </div><div class="column column-12">
-                <button class="button">Submit</button></div></div></div></main>
+            </div><div class="column column-12"><a href={{'/blogs/index'}}class="btn">Edit</a>
+            </div></div></div></main>
 
 @endsection

@@ -15,9 +15,6 @@
 
 // Include Everything (True) for the Flex Grid :);
 @include foundation-everything(true);
+@include foundation-flex-grid;
 @import "sample";
 
-.center-block {
-  margin-right: auto;
-  margin-left: auto;
-}

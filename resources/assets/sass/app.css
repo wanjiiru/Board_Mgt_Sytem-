@@ -11,8 +11,8 @@ Error: File to import not found or unreadable: node_modules/foundation-sites/scs
 15: 
 16: // Include Everything (True) for the Flex Grid :);
 17: @include foundation-everything(true);
-18: @import "sample";
-19: 
+18: @include foundation-flex-grid;
+19: @import "sample";
 
 Backtrace:
 app.scss:14
@@ -58,4 +58,4 @@ app.scss:14
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: node_modules/foundation-sites/scss/foundation.\A         on line 14 of app.scss\A \A 9: //@import \"node_modules/bootstrap-sass/assets/stylesheets/bootstrap\";\A 10: // Settings\A 11: @import \"settings\";\A 12: //\A 13: //// Foundation\A 14: @import \"node_modules/foundation-sites/scss/foundation\";\A 15: \A 16: // Include Everything (True) for the Flex Grid :);\A 17: @include foundation-everything(true);\A 18: @import \"sample\";\A 19: "; }
+  content: "Error: File to import not found or unreadable: node_modules/foundation-sites/scss/foundation.\A         on line 14 of app.scss\A \A 9: //@import \"node_modules/bootstrap-sass/assets/stylesheets/bootstrap\";\A 10: // Settings\A 11: @import \"settings\";\A 12: //\A 13: //// Foundation\A 14: @import \"node_modules/foundation-sites/scss/foundation\";\A 15: \A 16: // Include Everything (True) for the Flex Grid :);\A 17: @include foundation-everything(true);\A 18: @include foundation-flex-grid;\A 19: @import \"sample\";"; }

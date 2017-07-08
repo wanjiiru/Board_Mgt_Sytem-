@@ -25,13 +25,16 @@ Route::group(['middleware'=>'auth'], function () {
     Route::get('permissions-admin-superadmin',['middleware'=>'check-permission:admin|superadmin','uses'=>'HomeController@adminSuperadmin']);
     Route::get('permissions-superadmin',['middleware'=>'check-permission:superadmin','uses'=>'HomeController@superadmin']);
 });
-Route::resource('/boards', 'BoardController');
+//Route::resource('/boards', 'BoardController');
 Route::get('/ committees/make ', function (){
     return view ('Committees.make');
 });
 
 Route::resource('/meetings', 'MeetingsController');
-
+Route::get('/boards/create', function (){
+    return view ('Boards.create');
+});
+Route::resource('/dashboard', 'DashboardController');
 
 
 
