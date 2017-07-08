@@ -17,7 +17,7 @@ class MeetingsController extends Controller
     public function index()
     {
         $meetings = Meetings::all ();
-        return view ( 'meetings.index', ['meetings' => $meetings] );
+        return view ( 'Meetings.index', ['meetings' => $meetings] );
 
     }
 

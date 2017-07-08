@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-    
+
     <main class="login">
         <div class="box login-box">
             <div class="box-header">News</div>
