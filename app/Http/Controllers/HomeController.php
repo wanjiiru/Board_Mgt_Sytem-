@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,22 +26,7 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function allUsers()
-    {
-        $users = User::all();
-        return view('users.users',['users'=>$users]);
-        dd ('Access All users');
-    }
-
-
-    public function adminSuperAdmin()
-    {
-        dd ('Acess Admin and SuperAdmin');
-    }
-
-
-    public function superAdmin()
-    {
-        dd('Access SuperAdmin');
-    }
+//    public function doLogin(){
+//        'email' => 'required|email',
+//    }
 }

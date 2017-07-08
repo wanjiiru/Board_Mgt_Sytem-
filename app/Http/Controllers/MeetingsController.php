@@ -51,7 +51,7 @@ class MeetingsController extends Controller
     public function show($id)
     {
         $meeting = Meeting::findOrFail($id);
-        return view ('meetings.show', compact ('meeting'));
+        return view ('Meetings.show', compact ('Meeting'));
     }
 
     /**

@@ -15,7 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -31,10 +30,19 @@ Route::get('/ committees/make ', function (){
 });
 
 Route::resource('/meetings', 'MeetingsController');
-Route::get('/boards/create', function (){
-    return view ('Boards.create');
-});
+//Route::get('/boards/create', function (){
+//    return view ('Boards.create');
+//});
 Route::resource('/dashboard', 'DashboardController');
+Route::resource('/boards','BoardController');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
