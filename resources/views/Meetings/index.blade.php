@@ -11,32 +11,40 @@
                 {{--<div class="small-12 large-12 columns">--}}
                     {{--<div class="box">--}}
                         {{--<div class="box-body">--}}
-                            <div class="box-header"><span>Meetings</span></div>
-                            <a class="btn btn-primary pull-left" href="/meetings/create">
+                            <a class="btn btn-primary pull-right" href="/meetings/create">
                                 Create Meeting</a></div>
-                        @foreach($meetings as $meeting)
-                            <div id="{{$meeting->id}}">
-                                <div class="meeting-content">
-                                    <dl class="fields-list">
-                                        <dt>Title:</dt>
-                                        <dd>{!! $meeting->title !!}</dd>
-                                        <dt>Commitee:</dt>
-                                        <dd>{!! $meeting->committee !!}</dd>
+                            <table>
+                                <caption>Meetings</caption>
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Title</th>
+                                    <th>Committee</th>
+                                    <th>Date</th>
+                                    <th>Location</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($meetings as $meeting)
+                                <tr>
+                                    <td>{{$meeting->id}}</td>
+                                    <td>{!! $meeting->title !!}</td>
+                                    <td>{!! $meeting->committee !!}</td>
+                                    <td>{!! $meeting->date  !!} </td>
+                                    <td><a href="https://maps.google.com/?q=alma"
+                                           target="_blank">{!! $meeting->location  !!}</a>
+                                    </td>
+                                </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
 
-                                        <dt>Date:</dt>
-                                        <dd class="date">{!! $meeting->date  !!} <span
-                                                    class="repeat-description"></span></dd>
-                                        <dt>Location:</dt>
-                                        <dd><a href="https://maps.google.com/?q=alma"
-                                               target="_blank">{!! $meeting->location  !!}</a></dd>
-                                    </dl>
-                                </div>
-                            </div></div>
+                            </div>
                 </div>
             </div>
         </div>
     </section>
-    @endforeach
+
 
 @endsection
 

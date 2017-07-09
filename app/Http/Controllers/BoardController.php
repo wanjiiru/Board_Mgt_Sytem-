@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Board;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Http\Request;
+use App\User;
+use App\members;
+use App\board_membership;
+use Illuminate\Support\Facades\Auth;
 
 class BoardController extends Controller
 {
@@ -16,8 +20,13 @@ class BoardController extends Controller
      */
     public function index()
     {
-        return view ('boards.index');
-        //
+        if(Auth::user()->role == 'admin') {
+            $boards= Board::all ();
+        }
+        else{
+            $boards = \App\board_membership::where('user_id',Auth::user()->id)->get();
+        }
+        return view ( 'Boards.index', ['boards' => $boards] );
     }
 
     /**
@@ -27,7 +36,9 @@ class BoardController extends Controller
      */
     public function create()
     {
-        return view ('boards.create');
+        if(Auth::user()->role == 'admin') {
+            return view ( 'boards.create' );
+        }
     }
 
     /**
@@ -38,17 +49,21 @@ class BoardController extends Controller
      */
     public function store(Request $request)
     {
+        Board::create ( $request->all() );
+        return redirect ( '/boards/' );
     }
-
     /**
      * Display the specified resource.
      *
      * @param  \App\Board  $board
      * @return \Illuminate\Http\Response
      */
-    public function show(Board $board)
+    public function show($id)
     {
-        //
+        $users = User::all();
+        $members = \App\board_membership::where('board_id',$id)->get();
+        $board = Board::findOrFail($id);
+        return view ('boards.show', compact ('board','users','members'));
     }
 
     /**
@@ -84,4 +99,11 @@ class BoardController extends Controller
     {
         //
     }
+
+    /**
+     * @param Request $request
+     */
+//
+
+
 }

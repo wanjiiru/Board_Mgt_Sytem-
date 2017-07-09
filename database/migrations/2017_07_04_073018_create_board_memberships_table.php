@@ -16,6 +16,7 @@ class CreateBoardMembershipsTable extends Migration
         Schema::create('board_memberships', function (Blueprint $table) {
             $table->increments('id');
             $table->integer ('board_id');
+            $table->string ('name');
             $table->integer ('user_id');
             $table->string ('position');
             $table->timestamps();
