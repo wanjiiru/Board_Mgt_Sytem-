@@ -52,6 +52,7 @@ class BoardMembershipController extends Controller
                     'position' => 'member'
                 ]);
             }
+            return redirect ('boards/'.$inputs['board']);
        }
 
     }

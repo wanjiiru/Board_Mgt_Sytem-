@@ -20,10 +20,12 @@
         <ul>
             <li><a href="/dashboard">Dashboard</a></li>
             <li><a href="/boards">Boards</a></li>
-            <li><a href="committees/make ">Create Committee</a></li>
-            <li><a href="meetings">Meetings</a></li>
+            <li><a href="committees/make ">Committees</a></li>
+            <li><a href="/meetings/create">Meetings</a></li>
             <li><a href="#">Reports</a></li>
             <li><a href="#">Issues</a></li>
+            <li><a href="{{ route('logout') }}">logout</a></li>
+
         </ul>
     </aside>
     <section class="main-section">
@@ -38,7 +40,7 @@
 <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 <script>
     $(function() {
-        $( "#datepicker" ).datepicker();
+        $( "#datepicker" ).datepicker({minDate : 0});
     });
 </script>
 </body>

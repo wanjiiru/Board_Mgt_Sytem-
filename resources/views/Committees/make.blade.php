@@ -5,27 +5,29 @@
         <div class="section-wrapper">
             <div class="box">
                 <div class="row">
+                    <div class="small-8 column">
                     {!! Form::open(['url' => '/committees']) !!}
-                    <div class="row">
+                    <div class="small-8 column">
                         {!! Form::label('name') !!}
                         {!! Form::text('name', null) !!}
                     </div>
-                    <div class="row">
+                    <div class="small-8 column">
                         {!! Form::label('chaiperson') !!}
                         {!! Form::text('chairperson', null) !!}
                     </div>
-                    <div class="row">
+                    <div class="small-8 column">
                         {!! Form::label('summary') !!}
                         {!! Form::textarea('summary', null) !!}
                     </div>
-                    <div class="row">
+                    <div class="small-8 column">
                         {!! Form::select('members') !!}
                         {!! Form::text('add members', null) !!}
                     </div>
-                    <div class="row">
+                    <div class="small-8 column">
                         {!! Form::submit('Create committee') !!}
                     </div>
                     {!! Form::close() !!}
+                </div>
                 </div>
                 @if (count($errors))
                     <div class="row">

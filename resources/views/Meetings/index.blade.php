@@ -17,22 +17,23 @@
                                 <caption>Meetings</caption>
                                 <thead>
                                 <tr>
-                                    <th>#</th>
-                                    <th>Title</th>
-                                    <th>Committee</th>
+                                    {{--<th>#</th>--}}
+                                    <th>id</th>
+                                    <th>Agenda</th>
                                     <th>Date</th>
                                     <th>Location</th>
+                                    <th>Board</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($meetings as $meeting)
                                 <tr>
-                                    <td>{{$meeting->id}}</td>
-                                    <td>{!! $meeting->title !!}</td>
-                                    <td>{!! $meeting->committee !!}</td>
+                                    <td>{!!  $meeting->id!!}</td>
+                                    <td>{!! ucwords($meeting->agenda)!!}</td>
                                     <td>{!! $meeting->date  !!} </td>
+                                    <td>{!! ucwords($meeting->committee) !!}</td>
                                     <td><a href="https://maps.google.com/?q=alma"
-                                           target="_blank">{!! $meeting->location  !!}</a>
+                                           target="_blank">{!! ucwords($meeting->location)  !!}</a>
                                     </td>
                                 </tr>
                                 @endforeach

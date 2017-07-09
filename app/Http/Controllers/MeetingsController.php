@@ -6,6 +6,7 @@ use App\Meetings;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests\FormRequests\MeetingsFormRequest;
+use App\Board;
 
 class MeetingsController extends Controller
 {
@@ -28,7 +29,9 @@ class MeetingsController extends Controller
      */
     public function create()
     {
-        return view ('meetings.create');
+        $boards = Board::all();
+
+        return view ('meetings.create', ['boards' => $boards] );
     }
 
     /**
