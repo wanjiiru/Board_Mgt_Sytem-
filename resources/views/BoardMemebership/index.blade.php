@@ -5,7 +5,8 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h2><span>BoardMemberships</span><a class="btn btn-primary pull-right" href="/boardmembershipss/create">
+                        <h2><span>BoardMemberships</span><a class="btn btn-primary pull-right"
+                                                            href="/boardmembershipss/create">
                                 Board</a></h2>
                     </div>
                 </div>
